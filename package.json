@@ -1,0 +1,41 @@
+{
+	"name": "is-dnt",
+	"version": "1.0.0",
+	"description": "Check whether the Do not track (DNT) policy is enabled in user's browser or not",
+	"main": "dist",
+	"author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
+	"bugs": {
+		"url": "https://github.com/xxczaki/is-dnt/issues"
+	},
+	"scripts": {
+		"build": "del dist && tsc",
+		"test": "xo && npm run build",
+		"prepublishOnly": "npm run build"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"license": "MIT",
+	"repository": "xxczaki/is-dnt",
+	"homepage": "https://github.com/xxczaki/is-dnt",
+	"devDependencies": {
+		"@akepinski/tsconfig": "0.0.2",
+		"@typescript-eslint/eslint-plugin": "^1.10.2",
+		"@typescript-eslint/parser": "^1.10.2",
+		"del-cli": "^2.0.0",
+		"eslint-config-xo-typescript": "^0.14.0",
+		"typescript": "^3.5.1",
+		"xo": "*"
+	},
+	"types": "dist",
+	"sideEffects": false,
+	"xo": {
+		"extends": "xo-typescript",
+		"envs": [
+			"browser"
+		],
+		"extensions": [
+			"ts"
+		]
+	}
+}

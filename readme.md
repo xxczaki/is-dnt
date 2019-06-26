@@ -14,7 +14,6 @@
 $ npm install is-dnt
 ```
 
-
 ## Usage
 
 ```js
@@ -23,12 +22,15 @@ const isDnt = require('is-dnt');
 isDnt(); //=> true
 ```
 
-
 ## API
 
 ### isDnt()
 
 Returns a `boolean` of whether the Do not track policy is enabled and `undefined` if the browser does not support DNT.
+
+## Notice
+
+This package uses the solution described by [Corbin Davenport](https://github.com/corbindavenport) in his [How to correctly check for Do Not Track with JavaScript](https://dev.to/corbindavenport/how-to-correctly-check-for-do-not-track-with-javascript-135d) post.
 
 ## License
 

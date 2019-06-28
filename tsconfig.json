@@ -3,12 +3,8 @@
 	"compilerOptions": {
 		"incremental": true,
 		"outDir": "dist",
-        "target": "esnext",
-        "lib": [
-            "dom"
-        ]
+		"target": "esnext",
+		"lib": ["dom"]
 	},
-	"include": [
-		"source"
-	]
+	"include": ["source"]
 }

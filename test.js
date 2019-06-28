@@ -13,6 +13,10 @@ test('supports `window.doNotTrack`', t => {
 	t.is(isDnt(), true);
 	window.doNotTrack = '0';
 	t.is(isDnt(), false);
+	window.doNotTrack = 'null';
+	t.is(isDnt(), false);
+	window.doNotTrack = 'unspecified';
+	t.is(isDnt(), false);
 	window.doNotTrack = undefined;
 });
 
@@ -24,6 +28,8 @@ test('supports `navigator.doNotTrack`', t => {
 	navigator.doNotTrack = '0';
 	t.is(isDnt(), false);
 	navigator.doNotTrack = 'no';
+	t.is(isDnt(), false);
+	window.doNotTrack = 'unspecified';
 	t.is(isDnt(), false);
 	navigator.doNotTrack = undefined;
 });

@@ -1,7 +1,7 @@
 'use strict';
 
 const reTruthy = /^(?:1|yes|true)$/;
-const reFalsey = /^(?:0|no|false)$/;
+const reFalsey = /^(?:0|null|no|false|unspecified)$/;
 
 const isFunction = <T>(arg: unknown): arg is T => typeof arg === 'function';
 const isUndefined = (arg: unknown): arg is undefined => arg === undefined;

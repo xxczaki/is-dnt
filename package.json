@@ -3,10 +3,11 @@
 	"version": "1.0.0",
 	"description": "Check whether the Do not track (DNT) policy is enabled in user's browser or not",
 	"main": "dist/index.js",
+	"module": "dist/index.esm.js",
 	"types": "dist/index.d.ts",
 	"files": [
 		"dist/index.js",
-		"dist/index.js.map",
+		"dist/index.esm.js",
 		"dist/index.d.ts"
 	],
 	"author": "Antoni Kepinski <a@kepinski.me> (https://kepinski.me)",
@@ -14,7 +15,10 @@
 		"url": "https://github.com/xxczaki/is-dnt/issues"
 	},
 	"scripts": {
-		"build": "del dist && tsc",
+		"prebuild": "del-cli dist",
+		"esm": "tsc --module esnext && cpy dist/index.js dist --rename index.esm.js",
+		"cjs": "tsc --module commonjs",
+		"build": "npm run esm && npm run cjs",
 		"test": "xo && npm run build && ava",
 		"prepublishOnly": "npm run build"
 	},
@@ -30,6 +34,7 @@
 		"@typescript-eslint/parser": "^1.10.2",
 		"ava": "^2.1.0",
 		"browser-env": "^3.2.6",
+		"cpy-cli": "^2.0.0",
 		"del-cli": "^2.0.0",
 		"eslint-config-xo-typescript": "^0.15.0",
 		"typescript": "^3.5.1",

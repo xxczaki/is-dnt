@@ -1,5 +1,3 @@
-'use strict';
-
 const reTruthy = /^(?:1|yes|true)$/;
 const reFalsey = /^(?:0|no|false)$/;
 
@@ -47,5 +45,4 @@ const isDnt = (): boolean | undefined => {
 		undefined;
 };
 
-module.exports = isDnt;
 export default isDnt;

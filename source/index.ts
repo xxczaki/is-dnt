@@ -20,31 +20,31 @@ const yn = (arg: unknown): boolean | undefined => {
 	return undefined;
 };
 
-type FlagFunction = () => boolean;
+type BooleanFunction = () => boolean;
 
 /**
  * @returns {(boolean|undefined)} Whether the Do Not Track (DNT) policy is enabled in user's browser or not. `undefined` means the browser does not support DNT.
  */
 const isDnt = (): boolean | undefined => {
-	const navigator = window.navigator as Navigator & { msDoNotTrack?: '0' | '1' };
-	const external = window.external as External & { msTrackingProtectionEnabled?: FlagFunction };
+	const navigator = window.navigator as
+		Navigator & { msDoNotTrack?: '0' | '1' };
+	const external = window.external as
+		External & { msTrackingProtectionEnabled?: BooleanFunction };
 
 	const results = [
-		window.doNotTrack,
-		navigator.doNotTrack,
-		navigator.msDoNotTrack,
-		isFunction<FlagFunction>(external.msTrackingProtectionEnabled) ?
-			external.msTrackingProtectionEnabled() :
-			undefined
-	]
-		.map(it => yn(it))
-		.filter(it => !isUndefined(it));
+		yn(window.doNotTrack),
+		yn(navigator.doNotTrack),
+		yn(navigator.msDoNotTrack),
+		yn(
+			isFunction<BooleanFunction>(external.msTrackingProtectionEnabled) ?
+				external.msTrackingProtectionEnabled() :
+				undefined
+		)
+	].filter(it => !isUndefined(it));
 
-	if (results.length <= 0) {
-		return;
-	}
-
-	return results.some(Boolean);
+	return results.length > 0 ?
+		results.some(Boolean) :
+		undefined;
 };
 
 module.exports = isDnt;

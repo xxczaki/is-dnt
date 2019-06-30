@@ -5,7 +5,9 @@
 		"target": "es5",
 		"sourceMap": false,
 		"incremental": false,
-		"lib": ["dom"],
+		"lib": [
+			"dom"
+		],
 	},
 	"include": [
 		"src/**/*"

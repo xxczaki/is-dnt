@@ -21,7 +21,7 @@ const yn = (arg: unknown): boolean | undefined => {
 type BooleanFunction = () => boolean;
 
 /**
- * @returns {(boolean|undefined)} Whether the Do Not Track (DNT) policy is enabled in user's browser or not. `undefined` means the browser does not support DNT.
+ * @returns {boolean|undefined} Whether the Do Not Track (DNT) policy is enabled in user's browser or not. `undefined` means the browser does not support DNT.
  */
 const isDnt = (): boolean | undefined => {
 	const navigator = window.navigator as

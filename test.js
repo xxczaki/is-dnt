@@ -1,7 +1,7 @@
 import test from 'ava';
 import browserEnv from 'browser-env';
 // eslint-disable-next-line import/no-unresolved
-import isDnt from '.';
+import isDnt from './dist';
 
 browserEnv(['window', 'navigator']);
 

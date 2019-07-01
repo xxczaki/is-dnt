@@ -1,6 +1,6 @@
 {
 	"name": "is-dnt",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "Check whether the Do not track (DNT) policy is enabled in user's browser or not",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
@@ -30,14 +30,14 @@
 	"homepage": "https://github.com/xxczaki/is-dnt",
 	"devDependencies": {
 		"@akepinski/tsconfig": "0.0.2",
-		"@typescript-eslint/eslint-plugin": "^1.10.2",
-		"@typescript-eslint/parser": "^1.10.2",
+		"@typescript-eslint/eslint-plugin": "^1.11.0",
+		"@typescript-eslint/parser": "^1.11.0",
 		"ava": "^2.1.0",
 		"browser-env": "^3.2.6",
 		"cpy-cli": "^2.0.0",
 		"del-cli": "^2.0.0",
 		"eslint-config-xo-typescript": "^0.15.0",
-		"typescript": "^3.5.1",
+		"typescript": "^3.5.2",
 		"xo": "*"
 	},
 	"sideEffects": false,

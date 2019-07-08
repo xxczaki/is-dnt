@@ -32,15 +32,26 @@
 		"@akepinski/tsconfig": "0.0.2",
 		"@typescript-eslint/eslint-plugin": "^1.11.0",
 		"@typescript-eslint/parser": "^1.11.0",
-		"ava": "^2.1.0",
+		"ava": "^2.2.0",
 		"browser-env": "^3.2.6",
 		"cpy-cli": "^2.0.0",
 		"del-cli": "^2.0.0",
 		"eslint-config-xo-typescript": "^0.15.0",
+		"ts-node": "^8.3.0",
 		"typescript": "^3.5.2",
 		"xo": "*"
 	},
 	"sideEffects": false,
+	"ava": {
+		"babel": false,
+		"compileEnhancements": false,
+		"extensions": [
+			"ts"
+		],
+		"require": [
+			"ts-node/register"
+		]
+	},
 	"xo": {
 		"extends": "xo-typescript",
 		"envs": [
@@ -48,6 +59,9 @@
 		],
 		"extensions": [
 			"ts"
-		]
+		],
+		"rules": {
+			"ava/no-ignored-test-files": "off"
+		}
 	}
 }
